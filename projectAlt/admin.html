@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        function message(){
+            let DBRC = new XMLHttpRequest();
+
+            DBRC.onreadystatechange = function () {
+                document.getElementById('clear').innerText=this.responseText;            }
+
+            DBRC.open("GET", "admin.php?clear=message");
+            DBRC.send();
+        }
+
+        function players (){
+
+                let DBRC = new XMLHttpRequest();
+
+                DBRC.onreadystatechange = function () {
+                    document.getElementById('clear').innerText=this.responseText;                }
+
+                DBRC.open("GET", "admin.php?clear=players");
+                DBRC.send();
+
+
+        }
+
+        function board(){
+
+                let DBRC = new XMLHttpRequest();
+
+                DBRC.onreadystatechange = function () {
+                    document.getElementById('clear').innerText=this.responseText;
+                }
+
+                DBRC.open("GET", "admin.php?clear=board");
+                DBRC.send();
+        }
+    </script>
+</head>
+<body>
+
+<h1>ADMIN</h1>
+<a id="clear"></a><br>
+<button onclick="message()">clear messages</button>
+<button onclick="players()">clear players</button>
+<button onclick="board()">clear board</button>
+
+
+</body>
+</html>
